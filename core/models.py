@@ -4,6 +4,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.core.mail import send_mail 
 from django.conf import settings
+from PIL import Image
 
 class Category(models.Model):
 	Title = models.CharField(max_length=100)
@@ -43,8 +44,8 @@ class Profile(models.Model):
 	subject = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
 	is_active = models.BooleanField(default=False)
 	mobile_number = models.CharField(max_length=13, null=True, blank=True)
-	rank = models.CharField(max_length=5, null=True, blank=True)
-	Files = models.FileField(upload_to='files/', null=True, blank=True)
+	rank = models.CharField(max_length=5, null=True, blank=True, verbose_name="JEE/GATE Rank")
+	result_file = models.ImageField(upload_to='files', null=True, blank=True, verbose_name="Upload Result")
 
 	class Meta:
 		verbose_name_plural = "Profiles"

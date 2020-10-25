@@ -7,7 +7,7 @@
     <div class="site-section">
       <div class="container">
 
-    <form style="margin-top:75px;">
+    <form method="POST" style="margin-top:75px;" encytpe="multipart/form-data">
       {% csrf_token %}
       <h1>Register</h1><br>
       <div class="form-row form-group">
@@ -32,29 +32,13 @@
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password1">
   </div>
-  <div class="form-group">
-    <label for="">Mobile Number</label>
-    <input type="text" class="form-control" id="" placeholder="Mobile Number" name="mobile">
-  </div>
-  <div class="form-group">
-    <label for="">JEE Rank / Gate Rank</label>
-    <input type="text" class="form-control" id="" placeholder="JEE Rank" name="rank">
-  </div>
-  <div class="input-group">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-  </div>
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile01"
-      aria-describedby="inputGroupFileAddon01">
-    <label class="custom-file-label" for="inputGroupFile01">JEE/Gate Result PDF</label>
-  </div>
-</div>
 <br>
 <br>
   
   
   <button type="submit" class="btn btn-primary">Register</button>
+
+</div>
 </form>
 </div>
 </div>

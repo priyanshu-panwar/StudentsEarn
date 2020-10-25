@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <div class="site-section">
+      <div class="container">
+        <h1>Profile</h1>
+        {% if saved %}
+        <h4>Please update your details.</h4>
+        {% endif %}
+    <form style="margin-top:50px;" method="POST" encytpe="multipart/form-data">
+      {% csrf_token %}
+    {{ form.as_p }}
+  
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+</div>
+</div>
+
+
+{% endblock content %}

@@ -1,3 +1,8 @@
 from django.forms import ModelForm
-from .models import Article
+from .models import Profile
+
+class ProfileForm(ModelForm):
+	class Meta:
+		model = Profile
+		fields = ['upi', 'subject', 'mobile_number', 'rank', 'result_file', 'subject']
 

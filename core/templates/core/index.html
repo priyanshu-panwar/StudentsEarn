@@ -3,10 +3,17 @@
 
 {% block content %}
 
+
     <div class="site-section site-hero">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-10">
+
+
+{% if saved %}
+<h1>You have successfully registered. Please login and update your Profile</h1>
+{% endif %}
+
             <span class="d-block mb-3 caption" data-aos="fade-up" data-aos-delay="100">Helping Students</span>
             <h1 class="d-block mb-4" data-aos="fade-up" data-aos-delay="200">Students Earn</h1>
             <span class="d-block mb-5 caption" data-aos="fade-up" data-aos-delay="300">Helping Students All Over the World</span>
