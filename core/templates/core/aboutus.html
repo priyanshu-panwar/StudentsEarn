@@ -1,69 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>StudentsEarn</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% extends 'core/base.html' %}
+{% load static %}
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180241679-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-180241679-1');
-	</script>
-
-
-  </head>
-  <body>
-  
-  <div class="site-wrap">
-
-    <div class="site-mobile-menu">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div>
-    
-    <header class="site-navbar py-3" role="banner">
-      <div class="container-fluid">
-        <div class="row align-items-center">
-          <div class="col-11 col-xl-2">
-            <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0">Students<span class="text-primary">Earn</span> </a></h1>
-          </div>
-          <div class="col-12 col-md-10 d-none d-xl-block">
-            <nav class="site-navigation position-relative text-right" role="navigation">
-              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Register</a></li>
-                <li class="active cta"><a href="#">About Us</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
-          </div>
-        </div>
-      </div>
-    </header>
+{% block content %}
 
     <div class="site-section site-hero">
       <div class="container">
@@ -90,9 +28,12 @@
           </div>
           <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
             <ul>
-            	<li>Passionate to solve questions.</li>
-            	<li>Looking for a part time job to incur your daily spendings.</li>
-            	<li>Hit the About Us Section and read the whole process.</li>
+            	<li>Please Go To Register and signup.</li>
+            	<li>Login. You will be redirected to your Profile Section.</li>
+            	<li>Please update your preferences of Subjects and Verification Details.</li>
+              <li>Once verified by us, You will receive a mail.</li>
+              <li>Hit on "Assign me ID" Button to start solving Questions.</li>
+              <li>Read more about "Assign me ID" below.</li>
             </ul>
           </div>
         </div>
@@ -102,48 +43,72 @@
     </div>
 
 
-    
-    
-      
-    <footer class="site-footer">
+    <div class="site-section">
       <div class="container">
-        <div style = "text-align: center;">
-          <div>
-            <h2 class="footer-heading text-uppercase mb-4">Students Earn</h2>
-            <p>
-            	Come, Grow With Us.
-            </p>
-          </div>
-        </div>
-        <div class="row">
-          
-            <div class="col-md-12 text-center">
-              <div class="border-top pt-5">
-              <p>
-              This website is made with <i class="icon-heart text-primary" aria-hidden="true"></i> and <i class="fab fa-python" aria-hidden="true"></i>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              </p>
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>Assign Me ID</h2>
             </div>
           </div>
+          <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
+            <ul>
+              <li>Once you click on "Assign Me ID" button on your profile.</li>
+              <li>You will receive a <strong>mail</strong> within one hour with your <strong>ID</strong> and a <strong>URL</strong> where you will get Questions To Solve.</li>
+              <li>Start Solving Questions and update the number of Questions you do Everyday on your profile Section.</li>
+              <li>On 15th of every next month, you ll get <strong>paid</strong> for the questions you solved preceeding month on your UPI ID you provided.</li>
+              <li>You will get a mail one day before your payment.</li>
+            </ul>
+          </div>
         </div>
+
+        
       </div>
-    </footer>
-    
-  </div>
+    </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/bootstrap-datepicker.min.js"></script>
-  <script src="js/aos.js"></script>
+    <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>Question Rates</h2>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
+            <ul>
+              {% for c in cat %}
+              <li>{{ c.Title }} : ₹{{ c.price }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
 
-  <script src="js/main.js"></script>
+        
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>How To Reach Us?</h2>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
+            <ul>
+              <li>Once you have logged in.</li>
+              <li>You can directly send us a message from your Profile Section.</li>
+              <li>We will reply you within an hour.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
     
-  </body>
-</html>
+
+    
+{% endblock content %}

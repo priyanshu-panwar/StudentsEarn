@@ -3,21 +3,194 @@
 
 {% block content %}
 
-
-    <div class="site-section">
+<div class="site-section">
       <div class="container">
-        <h1>Profile</h1>
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>Profile</h2>
+              {% if active %}
+        <h4 style="color:green"> ACTIVE USER</h4><br>
+        {% if assigned %}
+        <h5 style="color:green"> ID ASSIGNED</h5>
+        {% endif %}
+        {% else %}
+
+        <h4 style="color:red"> INACTIVE USER</h4>
+        {% endif %}
+        {% if active and not assigned %}
+        <button class="btn btn-primary"><a style="color:black;" href="{% url 'assign' %}">ASSIGN ME ID</a></button><br>
+        {% endif %}
+        
         {% if saved %}
         <h4>Please update your details.</h4>
         {% endif %}
-    <form style="margin-top:50px;" method="POST" encytpe="multipart/form-data">
+        {% if not active and uploaded %}
+        We are verifying you. You will shortly receive a mail.
+        {% endif %}
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
+            <form style="margin-top:50px;" method="POST" enctype="multipart/form-data">
       {% csrf_token %}
-    {{ form.as_p }}
+      {% if not uploaded and not active %}
+      Please upload your result.
+      {% endif %}
+    {% for field in form.visible_fields %}
+    <div class="fieldWrapper">
+      {% if field is not None %}
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+        {% endif %}
+    </div>
+{% endfor %}
+<hr>
   
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+{% if assigned %}
+
+<div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>ID Details</h2>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
+            <p style="color:green">{{ helptext }}</p>
+          
+
+<div dir="auto">
+  <hr>
+<p><strong>Compensation Details:<u></u><u></u></strong></p>
+<p><u></u>&middot;Registered Subject:&nbsp; {{ p.id_alloted.Subject }}<u></u><u></u></p>
+<p><u></u>&middot;Rate per correct answer: INR {{ p.id_alloted.Subject.price }}<u></u></p>
+<p><u></u>&middot;Payment for correct answers will be processed every month to your registered bank account<u></u><u></u></p>
+<p><u></u>&middot;Your daily answering limit will dynamically vary everyday based on your answering performance<u></u><u></u></p>
+<p><u></u>&nbsp;<u></u></p>
+<hr>
+<p>Please find below your subject lead&rsquo;s details:</p>
+<p>Email: {{ p.id_alloted.Email }}</p>
+<p>Password : {{ p.id_alloted.Password }}</p>
+<hr>
+
+<form style="margin-top:50px;" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      Please update number of questions you did today.
+    {% for field in form2.visible_fields %}
+    <div class="fieldWrapper">
+      {% if field is not None %}
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+        {% endif %}
+    </div>
+{% endfor %}
+<hr>
+  
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+<hr>
+Click here to solve questions.
+<button class="btn btn-primary"><a style="color:black;" href="http://expert.chegg.com/home">Let's solve questions</a></button>
+<hr>
+
+<p>No more want to work?</p>
+<h4><a href="{% static 'core/confirm_release.html' %}">Release My ID</a></h4>
+
 </div>
-</div>
+
+
+
+            
+            <!--<form style="margin-top:50px;">
+      {% csrf_token %}
+            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5" placeholder="Please type your message" name="mess"></textarea>
+
+<hr>
+  <button type="submit" class="btn btn-primary">Send</button>
+</form>-->
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+{% endif %}
+
+{% if transactions %}
+
+<div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>Transactions</h2>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
+            <p style="color:green">{{ helptext }}</p>
+
+            <h4>Balance : INR {{ p.balance }}</h4>
+          <hr>
+            {% for m in transactions %}
+            <small>{{ m.date }}</small>
+            <p>You received: INR {{ m.credit }}</p>
+            <hr>
+            {% endfor %}
+
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+
+{% endif %}
+
+
+<div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>Message Us</h2>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
+            <p style="color:green">{{ helptext }}</p>
+          
+            {% for m in messages %}
+            <small>{{ m.date }}</small>
+            <p>You: {{ m.message }}</p>
+            <p>Support: {{ m.reply }}</p>
+            <hr>
+            {% endfor %}
+            <form style="margin-top:50px;">
+      {% csrf_token %}
+            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5" placeholder="Please type your message" name="mess"></textarea>
+
+<hr>
+  <button type="submit" class="btn btn-primary">Send</button>
+</form>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+
 
 
 {% endblock content %}

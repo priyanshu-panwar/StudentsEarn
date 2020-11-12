@@ -17,7 +17,15 @@
             <span class="d-block mb-3 caption" data-aos="fade-up" data-aos-delay="100">Helping Students</span>
             <h1 class="d-block mb-4" data-aos="fade-up" data-aos-delay="200">Students Earn</h1>
             <span class="d-block mb-5 caption" data-aos="fade-up" data-aos-delay="300">Helping Students All Over the World</span>
-            <a href="#" class="btn-custom" data-aos="fade-up" data-aos-delay="400"><span>About Us</span></a>
+            {% if user.is_authenticated and x %}
+            <a href="{% url 'assign' %}" class="btn-custom" data-aos="fade-up" data-aos-delay="400"><span>Assign Me ID</span></a>
+            {% else %}
+            <a href="{% url 'aboutus' %}" class="btn-custom" data-aos="fade-up" data-aos-delay="400"><span>About Us</span></a>
+            {% endif %}
+<br><br>
+            <button class="py-3 btn btn-success"> 3 NEW CSE GATE IDs AVAILABLE.</button>
+            <button class="py-3 btn btn-success"> NEW CHEMISTRY IDs AVAILABLE.</button>
+            
           </div>
         </div>
       </div>
@@ -30,15 +38,44 @@
         <div class="row mb-5">
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="site-section-heading">
-              <h2>Want To Work</h2>
+              <h2>How To Trust Us?</h2>
             </div>
           </div>
           <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
             
             <ul>
-            	<li>Passionate to solve questions.</li>
-            	<li>Looking for a part time job to incur your daily spendings.</li>
-            	<li>Hit the About Us Section and read the whole process.</li>
+              <!--<li>Here's a payment slip of one of our students.</li>
+              <img src="{% static  'core/images/payslip.jpg' %}" style="height: 250px; width:750px;">-->
+              <li>Here's the slips we payed to our Customers.</li>
+              <p><img src="{% static  'core/images/pay1.jpg' %}" style="height:400px; width:200px;"><img src="{% static  'core/images/pay2.jpg' %}" style="height:400px; width:200px;"><img src="{% static  'core/images/pay3.jpg' %}" style="height:400px; width:200px;"></p>
+              <li>You can trust us.</li>
+            </ul>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>Subjects We Have</h2>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
+            
+            <ul>
+            	<li><p><strong>Basic maths</strong> -&nbsp;Trigonometry, Pre-Algebra, Pre-Calculus, Algebra, Geometry.&nbsp;</p></li>
+            	<li><div dir="auto">
+<p><strong>Other Maths</strong> -&nbsp;&nbsp;Syllabus which is mentioned for other math includes discrete mathematics ,operational research , finite mathematics and business mathematics.&nbsp;Q &amp; A Board also contains the basic level mathematics like Quadratic Equations , linear Algebra and Calculus.&nbsp;</p>
+</div></li>
+            	<li><div dir="auto"><strong>Chemistry</strong> -&nbsp; questions of jee advance level .&nbsp;</div></li>
+              <li><div dir="auto"><strong>Computer Science</strong> - you will get questions of higher level as of gate</div></li>
             </ul>
           </div>
         </div>

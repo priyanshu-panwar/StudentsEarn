@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>Update your mobile number.</h2>
+            </div>
+          </div>
+          <div class="col-lg-5 mt-5 pl-lg-5" data-aos="fade-up" data-aos-delay="200">
+            <form style="margin-top:50px;" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form }}
+<hr>
+  
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+
+{% endblock content %}

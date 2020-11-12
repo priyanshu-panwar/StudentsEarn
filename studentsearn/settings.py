@@ -25,7 +25,7 @@ SECRET_KEY = 'xqe%luuvgmxjzddglu7h3a&5%%+di+u*&96qwsdmq7br!lrv^n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE =  'Asia/Calcutta'
 
 USE_I18N = True
 
@@ -125,12 +125,13 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media/') 
 MEDIA_URL = '/media/'
 
-
+from . import keys
 ANYMAIL = {
-    "SENDINBLUE_API_KEY": "",
+    "SENDINBLUE_API_KEY": keys.api_key,
 }
 EMAIL_BACKEND = "anymail.backends.sendinblue.EmailBackend"
 DEFAULT_FROM_EMAIL = "info@studentsearn.in"
 SERVER_EMAIL = "priyanshu009ch@hotmail.com"
+SOHAM = "sspatel1512@gmail.com"
 
 EMAIL_HOST_USER = DEFAULT_FROM_EMAIL

@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="site-section-heading">
+              <h2>Do you want to stop working?</h2>
+              <button class="btn btn-primary"><a style="color:black;" href="{% url 'release' %}">YES</a></button>
+              <button class="btn btn-primary"><a style="color:black;" href="{% url 'profile' %}">NO</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock content %}
